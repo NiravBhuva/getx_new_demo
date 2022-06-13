@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:getx_new_demo/modules/home/bindings/home_binding.dart';
+import 'package:getx_new_demo/modules/home/views/cart_view.dart';
+import 'package:getx_new_demo/modules/home/views/checkout_view.dart';
 import 'package:getx_new_demo/modules/home/views/home_view.dart';
+import 'package:getx_new_demo/modules/home/views/orders_view.dart';
 import 'package:getx_new_demo/modules/login/bindings/sign_in_binding.dart';
 import 'package:getx_new_demo/modules/splash/splash_screen.dart';
 
@@ -13,6 +16,9 @@ class Routes {
   static const SIGN_IN = '/sign_in';
   static const SIGN_UP = '/sign_up';
   static const HOME = '/home';
+  static const CART = '/cart';
+  static const CHECKOUT = '/checkout';
+  static const ORDERS = '/orders';
 
   static List<GetPage<dynamic>> pages = [
     GetPage(
@@ -33,6 +39,18 @@ class Routes {
       name: HOME,
       page: () => HomeScreen(),
       binding: HomeBinging(),
+    ),
+    GetPage(
+      name: CART,
+      page: () => CartScreen(),
+    ),
+    GetPage(
+      name: CHECKOUT,
+      page: () => CheckoutScreen(Get.arguments as bool),
+    ),
+    GetPage(
+      name: ORDERS,
+      page: () => OrdersScreen(),
     ),
   ];
 }
